@@ -75,13 +75,10 @@ export function createInput(defaultMetadata)
 			// Working around this issue with this simple hack.
 			if (newValue === value)
 			{
-				if (this.format(newValue).indexOf(event.target.value) === 0)
-				console.log('FORMAT NEW VALUE', this.format(newValue))
-				console.log('INDEX FORMAT NEW VALUE', this.format(newValue).indexOf(event.target.value))
-				console.log('NEW VALUE', newValue)
-				console.log('VALUE', value)
+				if (this.format(newValue).indexOf(event.target.value) === 0 && newValue[newValue.length - 1] === '+')
 				{
 					// Trim the last digit (or plus sign).
+
 					newValue = newValue.slice(0, -1)
 				}
 			}
